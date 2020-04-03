@@ -2,19 +2,6 @@
   scroll-behavior: smooth;
 }
 
-#carouselOffers {
-  min-height: 500px;
-}
-
-#carouselOffers img {
-  max-height: 450px;
-}
-
-.intro {
-  max-width: 400px;
-  margin-top: 150px;
-  text-align: center;
-}
 .card {
   height: 100%;
 }
@@ -31,7 +18,7 @@
   padding: 0.75rem 0.7rem;
 }
 
-.flex-sm-fill:hover {
+.nav-link:hover {
   color: #ffffff;
   background-color: #593196;
   cursor: pointer;
