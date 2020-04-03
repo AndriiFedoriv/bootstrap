@@ -36,7 +36,7 @@ class ProductList {
   }
   addEventListeners() {
     document
-      .querySelectorAll('.product .btn-info')
+      .querySelectorAll('.product .btn-outline-info')
       .forEach(button =>
         button.addEventListener('click', event =>
           this.handleProductInfoClick(event)
