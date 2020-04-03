@@ -16,6 +16,7 @@
 
 .btn {
   padding: 0.75rem 0.7rem;
+  margin: 3px;
 }
 
 .nav-link:hover {
