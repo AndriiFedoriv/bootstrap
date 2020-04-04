@@ -2,8 +2,20 @@
   scroll-behavior: smooth;
 }
 
-.card {
+.card  {
+    width: 220px;
     height: 100%;
+}
+
+.card-title {
+    font-size: 0.9rem;
+    height: 100%;
+}
+
+.card-img-top {
+    padding: 25px;
+    width: 220px;
+    height: 220px;
 }
 
 .alert {
@@ -14,9 +26,14 @@
   z-index: 1051;
 }
 
-.btn {
+.btn-lg {
   padding: 0.5rem 0.5rem;
-  margin: 0.15rem;
+  margin: 3%;
+}
+
+.buy {
+  padding: 0.5rem 0.5rem;
+  margin: 3%;
 }
 
 .nav-item .nav-link:hover {
@@ -43,4 +60,22 @@ body {
 .package {
         display: none;
     }
+}
+
+@media (max-width: 440px) {
+
+.card {
+    width: 150px;
+    height: 100%;
+} 
+
+.card-img-top {
+    padding: 25px;
+    width: 150px;
+    height: 150px;
+}
+.card-title {
+    font-size: 0.7rem;
+    height: 100%;
+}
 }
