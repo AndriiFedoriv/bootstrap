@@ -23,7 +23,7 @@ class Cart {
                 <div class="row">
                     <div class="col-5"><strong>Товар</strong></div>
                     <div class="col-3"><strong>Ціна</strong></div>
-                    <div class="col-2"><strong>Кількість</strong></div>
+                    <div class="col-1"><strong>Кількість</strong></div>
                 </div>`;
     for (const id in this.cart) {
       const product = await this.productService.getProductById(id);
@@ -31,9 +31,9 @@ class Cart {
       cartDomSting += `<div class="row" data-id="${id}"> 
                     <div class="col-5">${product.title}</div>
                     <div class="col-3">${product.price}</div>
-                    <div class="col-2">${this.cart[id]}</div>
-                    <div class="col-1"><button data-id=${id} class="btn btn-outline-success btn-lg plus">+</button></div>
-                    <div class="col-1"><button data-id=${id} class="btn btn-outline-danger btn-lg minus">-</button></div>
+                    <div class="col-1">${this.cart[id]}</div>
+                    <div class="col-1"><button data-id=${id} class="btn btn-outline-success rounded-circle btn-lg plus">+</button></div>
+                    <div class="col-1"><button data-id=${id} class="btn btn-outline-danger rounded-circle btn-lg minus">-</button></div>
                 </div>`;
     }
     total = total.toFixed(2);
