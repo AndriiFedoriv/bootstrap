@@ -32,8 +32,8 @@ class Cart {
                     <div class="col-5">${product.title}</div>
                     <div class="col-3">${product.price}</div>
                     <div class="col-2">${this.cart[id]}</div>
-                    <div class="col-1"><button data-id=${id} class="btn btn-sm plus">+</button></div>
-                    <div class="col-1"><button data-id=${id} class="btn btn-sm minus">-</button></div>
+                    <div class="col-1"><button data-id=${id} class="btn btn-outline-success btn-lg plus">+</button></div>
+                    <div class="col-1"><button data-id=${id} class="btn btn-outline-danger btn-lg minus">-</button></div>
                 </div>`;
     }
     total = total.toFixed(2);
