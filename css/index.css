@@ -19,7 +19,7 @@
   margin: 0.15rem;
 }
 
-.nav-link:hover {
+.nav-item .nav-link:hover {
   color: #ffffff;
   background-color: #593196;
   cursor: pointer;
@@ -30,6 +30,17 @@ body {
     margin: auto;
 }
 
-  .navbar-brand {
+.navbar-brand {
     text-align: center;
   }
+
+@media (max-width: 575px) {
+
+.search {
+        display: none;
+    }
+
+.package {
+        display: none;
+    }
+}
