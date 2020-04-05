@@ -1,3 +1,6 @@
+const parsedUrl = new URL(window.location.href);
+const currentUrlId = parsedUrl.searchParams.get("id");
+
 class ProductList {
   constructor(cart) {
     this.cart = cart;
@@ -50,8 +53,11 @@ class ProductList {
         )
       );
     document
-      .getElementById('sort-by-category-for-men')
-      .addEventListener('click', () => this.sortByCategoryForMen());
+    if(currentUrlId == 'sort-by-category-for-men') {
+       sortByCategoryForMen()
+    }
+      //.getElementById('sort-by-category-for-men')
+      //.addEventListener('click', () => this.sortByCategoryForMen());
   }
   async handleProductInfoClick(event) {
     const button = event.target; // Button that triggered the modal
