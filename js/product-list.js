@@ -52,9 +52,8 @@ class ProductList {
           this.handleProductBuyClick(event)
         )
       );
-    document
     if(currentUrlId == 'sort-by-category-for-men') {
-       sortByCategoryForMen()
+       this.sortByCategoryForMen();
     }
       //.getElementById('sort-by-category-for-men')
       //.addEventListener('click', () => this.sortByCategoryForMen());
