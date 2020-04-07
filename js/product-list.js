@@ -53,7 +53,9 @@ class ProductList {
         )
       );
     if (currentUrlId == "sort-by-category-for-men") {
-      document.addEventListener("DOMContentLoaded", sortByCategoryForMen());
+      document.addEventListener("DOMContentLoaded", () =>
+        this.sortByCategoryForMen()
+      );
     }
     //.getElementById('sort-by-category-for-men')
     //.addEventListener('click', () => this.sortByCategoryForMen());
