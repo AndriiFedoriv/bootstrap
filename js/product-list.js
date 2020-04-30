@@ -52,14 +52,15 @@ class ProductList {
           this.handleProductBuyClick(event)
         )
       );
-    if (currentUrlId == "sort-by-category-for-men") {
-      document.addEventListener("load", () =>
-        this.sortByCategoryForMen()
-      );
-    }
+   if (currentUrlId == "sort-by-category-for-men") {
+        document.addEventListener("click", () =>
+        this.sortByCategoryForMen());
+    } 
+
     //.getElementById('sort-by-category-for-men')
     //.addEventListener('click', () => this.sortByCategoryForMen());
   }
+
   async handleProductInfoClick(event) {
     const button = event.target; // Button that triggered the modal
     const id = button.dataset.id; // Extract info from data-* attributes
