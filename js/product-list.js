@@ -1,6 +1,3 @@
-const parsedUrl = new URL(window.location.href);
-const currentUrlId = parsedUrl.searchParams.get("id");
-
 class ProductList {
   constructor(cart) {
     this.cart = cart;
@@ -37,28 +34,21 @@ class ProductList {
   }
   addEventListeners() {
     document
-      .querySelectorAll(".product .btn-outline-info")
+      .querySelectorAll('.product .btn-info')
       .forEach(button =>
-        button.addEventListener("click", event =>
+        button.addEventListener('click', event =>
           this.handleProductInfoClick(event)
         )
       );
     document
       .querySelectorAll(
-        ".card.product button.buy, #productInfoModal button.buy"
+        '.card.product button.buy, #productInfoModal button.buy'
       )
       .forEach(button =>
-        button.addEventListener("click", event =>
+        button.addEventListener('click', event =>
           this.handleProductBuyClick(event)
         )
       );
-   if (currentUrlId == "sort-by-category-for-men") {
-        document.addEventListener('click', () =>
-        this.sortByCategoryForMen());
-    } 
-
-    //.getElementById('sort-by-category-for-men')
-    //.addEventListener('click', () => this.sortByCategoryForMen());
   }
 
   async handleProductInfoClick(event) {
@@ -80,13 +70,6 @@ class ProductList {
     const button = event.target;
     const id = button.dataset.id;
     this.cart.addProduct(id);
-    window.showAlert("Товар додано до кошика");
-  }
-  async sortByCategoryForMen() {
-    this.productService = new ProductsService();
-    const products = await this.productService.getProducts();
-    products.sort((a, b) => a.price - b.price);
-    this.renderProducts();
-    this.addEventListeners();
+    window.showAlert('Product added to cart');
   }
 }
