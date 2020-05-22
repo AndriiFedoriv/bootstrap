@@ -18,6 +18,7 @@ class ProductList {
                         alt="${product.title}">
                     <div class="card-body d-flex flex-column">
                       <h4 class="card-title">${product.title}</h4>
+                      
                       <div class="d-flex justify-content-around">
                         <button class="btn btn-outline-info rounded-lg" data-toggle="modal"
                           data-target="#productInfoModal" data-id="${product.id}">Інфо
@@ -34,7 +35,7 @@ class ProductList {
   }
   addEventListeners() {
     document
-      .querySelectorAll('.product .btn-info')
+      .querySelectorAll('.product .btn-outline-info')
       .forEach(button =>
         button.addEventListener('click', event =>
           this.handleProductInfoClick(event)
@@ -70,6 +71,6 @@ class ProductList {
     const button = event.target;
     const id = button.dataset.id;
     this.cart.addProduct(id);
-    window.showAlert('Product added to cart');
+    window.showAlert('Товар додано до кошика');
   }
 }
