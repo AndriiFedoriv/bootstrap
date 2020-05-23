@@ -15,7 +15,7 @@ class ProductList {
                         alt="${product.title}">
                     <div class="card-body d-flex flex-column">
                       <h4 class="card-title">${product.title}</h4>
-                      
+                      <p class="card-text flex-fill">${product.category}</p>
                       <div class="d-flex justify-content-around">
                         <button class="btn btn-outline-info rounded-lg" data-toggle="modal"
                           data-target="#productInfoModal" data-id="${product.id}">Інфо
@@ -36,6 +36,7 @@ class ProductList {
         document.querySelectorAll('.card.product button.buy, #productInfoModal button.buy').forEach(button=>button.addEventListener('click', event=>this.handleProductBuyClick(event)));
         document.getElementById('sort-by-category-for-women').addEventListener('click', ()=>this.sortByCategoryWomen());
         document.getElementById('sort-by-category-for-men').addEventListener('click', ()=>this.sortByCategoryMen());
+        document.getElementById('sort-by-category-unisex').addEventListener('click', ()=>this.sortByCategoryUnisex());
     }
 
     async handleProductInfoClick(event) {
@@ -73,5 +74,24 @@ class ProductList {
     products.sort((a, b) => b.category - a.category);
     this.renderProducts();
     this.addEventListeners();
+  }
+sortByCategoryUnisex() {
+    let forWomen = document.getElementsByClassName('forWomen');
+    let forMen = document.getElementsByClassName('forMen');
+    let unisex = document.getElementsByClassName('unisex');
+    this.styleDisplayNone(forWomen);
+    this.styleDisplayNone(forMen);
+    this.styleDisplayBlock(unisex);
+  }
+
+  styleDisplayNone(element) {
+    for (let i = 0; i < element.length; i++){
+      element[i].style.display = 'none';
+    }
+  }
+  styleDisplayBlock(element) {
+    for (let i = 0; i < element.length; i++){
+      element[i].style.display = 'block';
+    }
   }
 }
