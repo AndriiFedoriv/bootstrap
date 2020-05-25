@@ -75,23 +75,11 @@ class ProductList {
     this.renderProducts();
     this.addEventListeners();
   }
-sortByCategoryUnisex() {
-    let forWomen = document.getElementsByClassName('forWomen');
-    let forMen = document.getElementsByClassName('forMen');
-    let unisex = document.getElementsByClassName('unisex');
-    this.styleDisplayNone(forWomen);
-    this.styleDisplayNone(forMen);
-    this.styleDisplayBlock(unisex);
-  }
-
-  styleDisplayNone(element) {
-    for (let i = 0; i < element.length; i++){
-      element[i].style.display = 'none';
-    }
-  }
-  styleDisplayBlock(element) {
-    for (let i = 0; i < element.length; i++){
-      element[i].style.display = 'block';
-    }
+     async sortByCategoryUnisex() {
+    this.productService = new ProductsService();
+    const products = await this.productService.getProducts();
+    products.sort((a, b) => a.category + b.category);
+    this.renderProducts();
+    this.addEventListeners();
   }
 }

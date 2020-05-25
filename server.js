@@ -1,4 +1,3 @@
-  
 // This is simple sample how to serve static website and save form data to file with NodeJS
 // Author: programming mentor
 // Usage:
