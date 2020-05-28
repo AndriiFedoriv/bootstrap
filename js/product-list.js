@@ -55,7 +55,7 @@ class ProductList {
         btnBuy.innerText = `${product.price} грн. - Купити`;
         btnBuy.dataset.id = id;
     }
-    handleProductBuyClick(event) {
+        handleProductBuyClick(event) {
         const button = event.target;
         const id = button.dataset.id;
         this.cart.addProduct(id);
