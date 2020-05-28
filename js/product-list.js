@@ -78,7 +78,7 @@ class ProductList {
      async sortByCategoryUnisex() {
     this.productService = new ProductsService();
     const products = await this.productService.getProducts();
-    products.sort((a, b) => a.category + b.category);
+    products.sort((a, b) => a.category - b.category);
     this.renderProducts();
     this.addEventListeners();
   }
