@@ -61,25 +61,25 @@ class ProductList {
         this.cart.addProduct(id);
         window.showAlert('Товар додано до кошика');
     }
-   async sortByCategoryWomen() {
-    this.productService = new ProductsService();
-    const products = await this.productService.getProducts();
-    products.sort((a, b) => a.category - b.category);
-    this.renderProducts();
-    this.addEventListeners();
-  }
-     async sortByCategoryMen() {
-    this.productService = new ProductsService();
-    const products = await this.productService.getProducts();
-    products.sort((a, b) => b.category - a.category);
-    this.renderProducts();
-    this.addEventListeners();
-  }
-     async sortByCategoryUnisex() {
-    this.productService = new ProductsService();
-    const products = await this.productService.getProducts();
-    products.sort((a, b) => a.category - b.category);
-    this.renderProducts();
-    this.addEventListeners();
-  }
+    async sortByCategoryWomen() {
+        this.productService = new ProductsService();
+        const products = await this.productService.getProducts();
+        products.sort((a,b)=>a.category - b.category);
+        this.renderProducts();
+        this.addEventListeners();
+    }
+    async sortByCategoryMen() {
+        this.productService = new ProductsService();
+        const products = await this.productService.getProducts();
+        products.sort((a,b)=>b.category - a.category);
+        this.renderProducts();
+        this.addEventListeners();
+    }
+    async sortByCategoryUnisex() {
+        this.productService = new ProductsService();
+        const products = await this.productService.getProducts();
+        products.sort((a,b)=>a.category - b.category);
+        this.renderProducts();
+        this.addEventListeners();
+    }
 }
