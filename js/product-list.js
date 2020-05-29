@@ -34,9 +34,6 @@ class ProductList {
     addEventListeners() {
         document.querySelectorAll('.product .btn-outline-info').forEach(button=>button.addEventListener('click', event=>this.handleProductInfoClick(event)));
         document.querySelectorAll('.card.product button.buy, #productInfoModal button.buy').forEach(button=>button.addEventListener('click', event=>this.handleProductBuyClick(event)));
-        document.getElementById('sort-by-category-for-women').addEventListener('click', ()=>this.sortByCategoryWomen());
-        document.getElementById('sort-by-category-for-men').addEventListener('click', ()=>this.sortByCategoryMen());
-        document.getElementById('sort-by-category-unisex').addEventListener('click', ()=>this.sortByCategoryUnisex());
     }
 
     async handleProductInfoClick(event) {
@@ -60,26 +57,5 @@ class ProductList {
         const id = button.dataset.id;
         this.cart.addProduct(id);
         window.showAlert('Товар додано до кошика');
-    }
-    async sortByCategoryWomen() {
-        this.productService = new ProductsService();
-        const products = await this.productService.getProducts();
-        products.sort((a,b)=>a.category - b.category);
-        this.renderProducts();
-        this.addEventListeners();
-    }
-    async sortByCategoryMen() {
-        this.productService = new ProductsService();
-        const products = await this.productService.getProducts();
-        products.sort((a,b)=>b.category - a.category);
-        this.renderProducts();
-        this.addEventListeners();
-    }
-    async sortByCategoryUnisex() {
-        this.productService = new ProductsService();
-        const products = await this.productService.getProducts();
-        products.sort((a,b)=>a.category - b.category);
-        this.renderProducts();
-        this.addEventListeners();
     }
 }
