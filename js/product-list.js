@@ -8,7 +8,9 @@ class ProductList {
     async renderProducts() {
         let productListDomString = "";
         const products = await this.productService.getProducts();
-        products.forEach(product=>{
+        products
+        .filter(product => product.toLowerCase().includes(this.filter.toLowerCase))
+        .forEach(product=>{
             productListDomString += `<div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-7">
                   <div class="card product">
                     <img class="card-img-top" src="img/products/${product.image}" 
@@ -53,6 +55,12 @@ class ProductList {
         btnBuy.dataset.id = id;
     }
         handleProductBuyClick(event) {
+        const button = event.target;
+        const id = button.dataset.id;
+        this.cart.addProduct(id);
+        window.showAlert('Товар додано до кошика');
+    }
+        handleFilterKeyDown(event) {
         const button = event.target;
         const id = button.dataset.id;
         this.cart.addProduct(id);
