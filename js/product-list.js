@@ -61,7 +61,7 @@ class ProductList {
         window.showAlert('Товар додано до кошика');
     }
         handleFilterKeyDown(event) {
-        const button = event.target;
+        const str = search.value;
         const id = button.dataset.id;
         this.cart.addProduct(id);
         window.showAlert('Товар додано до кошика');
