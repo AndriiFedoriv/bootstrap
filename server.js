@@ -1,7 +1,7 @@
 // This is simple email sender by programming mentor
 // Usage:
 // Install deps: npm i express nodemailer body-parser
-// Run: GMAIL=fedorivandrij@gmail.com PASSWORD=gR1mA5x6 node server.js
+// Run: GMAIL=fedorivandrij@gmail.com PASSWORD=123456789 node server.js
 
 const express = require("express");
 const nodemailer = require("nodemailer");
